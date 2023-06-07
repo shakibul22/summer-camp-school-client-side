@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 const Navbar = () => {
   const {user,logOut}=useContext(AuthContext)
+  console.log(user);
   
   const handleLogOut=()=>{
     logOut()
@@ -16,14 +17,30 @@ const Navbar = () => {
 
        <>
        {
-        user ?  (<div><li><button onClick={handleLogOut} className="btn btn-ghost">LogOut</button> </li><li><img src={user.photoURL} alt="" /></li></div>): <li><Link to='/login'>Login</Link> </li>
+        user ?  (
+          <div className="flex justify-evenly gap-2">
+      <button
+              onClick={handleLogOut}
+              className="btn btn-warning btn-sm  "
+            >
+              Logout
+            </button>
+            <img
+              src={user.photoURL}
+              alt="Profile"
+              title={user.displayName}
+              className="h-8 w-8 rounded-full cursor-pointer mr-10"
+            />
+           
+          </div>
+        ) : <li><Link to='/login'>Login</Link> </li>
        }
        </>
       
      
     </>
     return (
-        <div className="navbar fixed max-w-screen-xl z-30 bg-opacity-50  text-white  bg-black bg-base-100">
+        <div className="navbar fixed max-w-screen-xl z-30 bg-opacity-50  text-white  bg-black ">
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
