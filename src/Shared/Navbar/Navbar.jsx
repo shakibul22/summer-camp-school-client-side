@@ -1,10 +1,12 @@
 
 const Navbar = () => {
     return (
-        <div className="navbar fixed max-w-screen-xl z-30 bg-opacity-50  text-white  bg-black  bg-base-100">
+        <div className="navbar fixed max-w-screen-xl z-30 bg-opacity-50  text-white bg-slate-800  ">
         <div className="flex-1">
-          <img className="w-10 h-10" src="https://th.bing.com/th/id/R.87f8ade857386bf2dd7043e402a3566a?rik=pdRwS%2bh5W%2byz%2fw&riu=http%3a%2f%2fwww.compassioninaction.info%2fwp-content%2fuploads%2f2015%2f10%2fyoga-logo.png&ehk=TXQKlT6ypQcLS7%2bjSFfd4zFZHO7cLIxqPchTGaovjms%3d&risl=&pid=ImgRaw&r=0" alt="YOGA" />
+      
+      <img className="w-10 h-10" src="https://th.bing.com/th/id/R.87f8ade857386bf2dd7043e402a3566a?rik=pdRwS%2bh5W%2byz%2fw&riu=http%3a%2f%2fwww.compassioninaction.info%2fwp-content%2fuploads%2f2015%2f10%2fyoga-logo.png&ehk=TXQKlT6ypQcLS7%2bjSFfd4zFZHO7cLIxqPchTGaovjms%3d&risl=&pid=ImgRaw&r=0" alt="YOGA" />
           <h1>YOGA</h1>
+    
         </div>
         <div className="flex-none">
      
