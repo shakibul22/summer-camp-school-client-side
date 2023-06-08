@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 const Navbar = () => {
   const {user,logOut}=useContext(AuthContext)
@@ -11,33 +11,16 @@ const Navbar = () => {
     .catch(error=>console.log(error))
   }
     const navOptions=<>
-       <li><Link to='/'>Home</Link> </li>
-       <li><Link to='/instructors'>Instructors</Link> </li>
-       <li><Link to='/classes'>Classes</Link> </li>
+       <li><NavLink to='/'>Home</NavLink> </li>
+       <li><NavLink to='/instructors'>Instructors</NavLink> </li>
+       <li><NavLink to='/classes'>Classes</NavLink> </li>
+       <li><NavLink to='/dashboard'>Dashboard</NavLink> </li>
 
        <>
        {
-        user ?  (
-          <div className="flex justify-evenly gap-2">
-      <button
-              onClick={handleLogOut}
-              className="btn btn-warning btn-sm  "
-            >
-              Logout
-            </button>
-            <img
-              src={user.photoURL}
-              alt="Profile"
-              title={user.displayName}
-              className="h-8 w-8 rounded-full cursor-pointer mr-10"
-            />
-           
-          </div>
-        ) : <li><Link to='/login'>Login</Link> </li>
-       }
+        user ?  (<div className="flex justify-evenly gap-2"><button onClick={handleLogOut}        className="btn btn-warning btn-sm" >Logout</button><img src={user.photoURL}             alt="Profile"  title={user.displayName} className="h-8 w-8 rounded-full cursor-pointer mr-10"/> </div>) : <li><Link to='/login'>Login</Link> </li>}
        </>
-      
-     
+ 
     </>
     return (
         <div className="navbar fixed max-w-screen-xl z-30 bg-opacity-50  text-white  bg-black ">
