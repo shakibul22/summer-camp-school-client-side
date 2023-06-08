@@ -48,11 +48,11 @@ const Login = () => {
   };
 
   return (
-    <div className="hero min-h-screen " style={{ backgroundImage: "url('https://t3.ftcdn.net/jpg/02/06/66/18/240_F_206661802_IHVW9C5M2LmylkPYPGXJVpLpAKpNkgtt.jpg')" }}>
-      <div className="hero-content flex-col  bg-slate-500 md:flex-row lg:flex-row gap-9" style={{ boxShadow: '10px 10px 10px 10px rgba(0, 0, 0, 0.25)' }}>
+    <div className="hero min-h-screen " style={{ backgroundImage: "url('https://c4.wallpaperflare.com/wallpaper/74/374/372/colorful-minimalism-windows-10-pastel-shapes-hd-wallpaper-preview.jpg')" }}>
+      <div className="hero-content flex-col  md:flex-row lg:flex-row gap-9" >
     
-        <div className="card flex-shrink-0 w-full h-[500px] max-w-5xl text-white ">
-            <p className='font-bold text-4xl '>Login Please!!</p>
+        <div className="card flex-shrink-0 w-1/2 h-[600px] max-w-5xl text-white shadow-xl p ">
+            <p className='font-bold text-4xl text-black px-6 '>Login Please!!</p>
           <form onSubmit={handleLogin} className="card-body">
             <div className="form-control">
               <label className="label">
@@ -82,6 +82,7 @@ const Login = () => {
           <p className='text-center  mb-6'><small>New Here?</small> <Link to='/signup' className='underline text-orange-400'>Create a new account</Link> </p>
           </form>
         </div>
+          <img className='w-1/2 rounded-lg ' src="https://img.freepik.com/free-vector/sign-concept-illustration_114360-5267.jpg?size=626&ext=jpg&ga=GA1.1.1507081718.1683064994&semt=sph" alt="" />
       </div>
     </div>
   );

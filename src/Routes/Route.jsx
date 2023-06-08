@@ -8,6 +8,9 @@ import Dashboard from "../Layout/Main/Dashboard";
 import PopularMenu from "../Pages/Home/PopularMenu/PopularMenu";
 import PopularInstructor from "../Pages/Home/PopularInstructor/PopularInstructor";
 
+import Classes from "../Pages/Classes/Classes";
+import Instructors from "../Pages/Instructors/Instructors";
+
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -29,6 +32,14 @@ export const router = createBrowserRouter([
       {
         path: '/popularClass',
         element: <PopularMenu/>
+      },
+      {
+        path: '/instructors',
+        element: <Instructors/>
+      },
+      {
+        path: '/classes',
+        element: <Classes/>
       },
       {
         path: '/popularInstructor',

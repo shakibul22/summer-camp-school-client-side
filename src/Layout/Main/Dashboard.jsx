@@ -1,4 +1,4 @@
-import { FaHome, FaRegAddressBook, FaShoppingBag, FaShoppingCart, FaWallet } from 'react-icons/fa';
+import { FaHome, FaRegAddressBook, FaShoppingBag, FaShoppingCart, FaWallet, FaWatchmanMonitoring } from 'react-icons/fa';
 import { Link, NavLink, Outlet } from 'react-router-dom';
 const Dashboard = () => {
     return (
@@ -12,8 +12,8 @@ const Dashboard = () => {
                 </div>
                 <div className="drawer-side ">
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-                    <ul className="menu p-4 w-80 h-full bg-slate-700 text-white">
-                        <h3 className="text-2xl font-bold">Dashboard</h3>
+                    <ul className="menu p-4 w-80 h-full bg-slate-500  text-white">
+                        <h3 className="text-2xl font-bold">Dashboard <FaWatchmanMonitoring/></h3>
                         {/* Sidebar content here */}
                         <li><NavLink to="/dashboard/home"><FaHome></FaHome> User Home</NavLink></li>
                         <li><a><FaRegAddressBook /> Add Class</a></li>
