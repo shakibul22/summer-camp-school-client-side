@@ -5,6 +5,8 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import Dashboard from "../Layout/Main/Dashboard";
+import PopularMenu from "../Pages/Home/PopularMenu/PopularMenu";
+import PopularInstructor from "../Pages/Home/PopularInstructor/PopularInstructor";
 
 export const router = createBrowserRouter([
   {
@@ -23,6 +25,14 @@ export const router = createBrowserRouter([
       {
         path: '/signup',
         element: <Register/>
+      },
+      {
+        path: '/popularClass',
+        element: <PopularMenu/>
+      },
+      {
+        path: '/popularInstructor',
+        element: <PopularInstructor/>
       },
     ]
   },

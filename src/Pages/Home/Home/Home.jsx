@@ -1,13 +1,18 @@
 import Banner from "../Banner/Banner";
-import PopularClass from "../PopularClass/PopularClass";
+import PopularInstructor from "../PopularInstructor/PopularInstructor";
+import PopularMenu from "../PopularMenu/PopularMenu";
+import DarkMode from "./DarkMode/DarkMode";
 
 const Home = () => {
     return (
-        <div>
+        <div> 
+          
           <Banner/> 
-          <PopularClass/>
+          <PopularMenu/>
+          <PopularInstructor/>
         </div>
     );
 };
-
 export default Home;
+
+
