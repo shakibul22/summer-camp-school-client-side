@@ -10,6 +10,9 @@ import PopularInstructor from "../Pages/Home/PopularInstructor/PopularInstructor
 
 import Classes from "../Pages/Classes/Classes";
 import Instructors from "../Pages/Instructors/Instructors";
+import AddClass from "../Pages/Dashboard/AddClass/AddClass";
+import PrivateRoute from "./PrivateRoute";
+import MySelectedClass from "../Pages/Dashboard/MySelectedClass/MySelectedClass";
 
 export const router = createBrowserRouter([
   {
@@ -49,6 +52,16 @@ export const router = createBrowserRouter([
   },
   {
     path: "dashboard",
-    element:<Dashboard/>
+    element:<PrivateRoute><Dashboard/></PrivateRoute>,
+    children:[
+      {
+        path:'/dashboard/addClass',
+        element:<AddClass></AddClass>
+      },
+      {
+        path:'/dashboard/mySelectedClass',
+        element:<MySelectedClass/>
+      }
+    ]
   }
 ]);
