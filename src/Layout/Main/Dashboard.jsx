@@ -4,8 +4,11 @@ import { FaHome, FaRegAddressBook, FaWallet, FaWatchmanMonitoring } from 'react-
 import { GrCheckboxSelected } from 'react-icons/Gr';
 import { NavLink, Outlet } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
+import useCart from '../../hooks/useCart';
+
 
 const Dashboard = () => {
+    const [cart] = useCart();
     const { user } = useContext(AuthContext)
     console.log(user);
 
@@ -43,18 +46,18 @@ const Dashboard = () => {
                     <ul className="menu p-4 w-80 h-full shadow-2xl  text-cyan-700">
                         <h3 className="text-2xl font-bold">Dashboard <FaWatchmanMonitoring /></h3>
                         {/* Sidebar content here */}
-                        <li><NavLink to="/dashboard/home"><FaHome></FaHome> User Home</NavLink></li>
+                        <li><NavLink to="/"><FaHome></FaHome> Home</NavLink> </li>
                         <li><NavLink to='/dashboard/addClass'><FaRegAddressBook /> Add Class</NavLink></li>
                         <li>
                             <NavLink to="/dashboard/mySelectedClass"><GrCheckboxSelected /> My Selected Classes
-                                <span className="badge  badge-secondary">+</span>
+                                <span className="badge  badge-secondary">+{cart?.length || 0}</span>
                             </NavLink>
 
                         </li>
                         <li><NavLink to="/dashboard/history"><FaWallet></FaWallet> Payment History</NavLink></li>
 
                         <div className="divider"></div>
-                        <li><NavLink to="/"><FaHome></FaHome> Home</NavLink> </li>
+                    
 
 
 

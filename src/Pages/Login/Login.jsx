@@ -3,11 +3,12 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
+import { FaGoogle } from 'react-icons/fa';
 
 const Login = () => {
   const [disabled, setDisabled] = useState(true);
 
-  const { signIn } = useContext(AuthContext);
+  const { signIn,googleUser } = useContext(AuthContext);
   const navigate=useNavigate();
   const location=useLocation();
    
@@ -46,6 +47,24 @@ const Login = () => {
 
     });
   };
+  const handleGoogle = () => {
+    googleUser()
+        .then(result => {
+            const googleUsed = result.user;
+            const saveUser = { name: googleUsed.displayName, email: googleUsed.email }
+                fetch('http://localhost:5000/users', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(saveUser)
+                })
+                    .then(res => res.json())
+                    .then(() => {
+                        navigate(from, { replace: true });
+                    })
+            })
+    }
 
   return (
     <div className="hero min-h-screen " style={{ backgroundImage: "url('https://c4.wallpaperflare.com/wallpaper/74/374/372/colorful-minimalism-windows-10-pastel-shapes-hd-wallpaper-preview.jpg')" }}>
@@ -79,7 +98,11 @@ const Login = () => {
             <div className="form-control mt-1">
               <input className="btn btn-warning" disabled={false} type="submit" value='Login' />
             </div>
-          <p className='text-center  mb-6'><small>New Here?</small> <Link to='/signup' className='underline text-orange-400'>Create a new account</Link> </p>
+          <p className='text-center '><small>New Here?</small> <Link to='/signup' className='underline text-orange-400'>Create a new account</Link> </p>
+          <div className="text-center ">
+                            <p>-----------or----------</p>
+                            <button onClick={handleGoogle} className="btn btn-circle btn-outline"> <FaGoogle /></button>
+                        </div>
           </form>
         </div>
           <img className='w-1/2 rounded-lg ' src="https://img.freepik.com/free-vector/sign-concept-illustration_114360-5267.jpg?size=626&ext=jpg&ga=GA1.1.1507081718.1683064994&semt=sph" alt="" />
