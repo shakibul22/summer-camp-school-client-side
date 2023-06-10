@@ -1,21 +1,21 @@
 import { useContext } from 'react';
 import { FaBook, FaHome, FaRegAddressBook, FaUsers, FaWallet } from 'react-icons/fa';
-import { GrCheckboxSelected } from 'react-icons/Gr';
+import { GrCheckboxSelected, GrContact } from 'react-icons/Gr';
 import { NavLink, Outlet } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 import useCart from '../../hooks/useCart';
 import useAdmin from '../../hooks/useAdmin';
+import useInstructor from '../../hooks/useInstructor';
 
 const Dashboard = () => {
   const [cart] = useCart();
   const { user } = useContext(AuthContext);
-  console.log(user);
-  const isAdmin = useAdmin();
-  const isInstructor = true; // Replace with the actual logic for determining instructor role
+  const [isAdmin] = useAdmin();
+  const [isInstructor] = useInstructor();
 
   return (
     <div className=" bg-[url('https://th.bing.com/th/id/R.fdd608656b482dc0dadde3aaab57c803?rik=c0wX08aqGRH1xQ&pid=ImgRaw&r=0')] ">
-      <div className="navbar ">
+      <div className="navbar">
         <div className="flex-1">
           <a href="#" className="btn btn-ghost normal-case text-xl">
             {' '}
@@ -45,26 +45,26 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
-      <div className="drawer lg:drawer-open   drawer-mobile">
+      <div className="drawer lg:drawer-open drawer-mobile">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content bg-[url('https://th.bing.com/th/id/R.fdd608656b482dc0dadde3aaab57c803?rik=c0wX08aqGRH1xQ&pid=ImgRaw&r=0')] flex flex-col items-center justify-center">
           <Outlet />
-          <label htmlFor="my-drawer-2" className="btn btn-primary  drawer-button lg:hidden">
+          <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">
             Open drawer
           </label>
         </div>
-        <div className="drawer-side ">
-          <label htmlFor="my-drawer-2" className="drawer-overlay "></label>
-          <ul className="menu p-4 w-80 h-full shadow-2xl  text-cyan-700">
-            <h3 className="text-2xl font-bold">Dashboard </h3>
-            {isAdmin ? (
+        <div className="drawer-side">
+          <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
+          <ul className="menu p-4 w-80 h-full shadow-2xl text-cyan-700">
+            {isAdmin && (
               <>
+            <h3 className="text-2xl font-bold">Admin Dashboard</h3>
+
                 <li>
                   <NavLink to="/dashboard/adminHome">
                     <FaHome /> Admin Home
                   </NavLink>
                 </li>
-               
                 <li>
                   <NavLink to="/dashboard/manageItems">
                     <FaWallet /> Manage Items
@@ -81,8 +81,11 @@ const Dashboard = () => {
                   </NavLink>
                 </li>
               </>
-            ) : isInstructor ? (
+            )}
+            {!isAdmin && isInstructor && (
               <>
+            <h3 className="text-2xl font-bold">Instructor Dashboard</h3>
+
                 <li>
                   <NavLink to="/dashboard/addClass">
                     <FaRegAddressBook /> Add Class
@@ -92,17 +95,26 @@ const Dashboard = () => {
                   <NavLink to="/dashboard/myClasses">My Classes</NavLink>
                 </li>
               </>
-            ) : (
+            )}
+            {!isAdmin && !isInstructor && (
               <>
+            <h3 className="text-2xl font-bold">Student Dashboard</h3>
+
                 <li>
                   <NavLink to="/dashboard/home">
-                    <FaHome /> User Home
+                    <FaHome /> Student Home
                   </NavLink>
                 </li>
                 <li>
                   <NavLink to="/dashboard/mySelectedClass">
                     <GrCheckboxSelected /> My Selected Classes
-                    <span className="badge badge-secondary">+{cart?.length || 0}</span>
+                    <span className="badge  badge-secondary">+{cart?.length || 0}</span>
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/dashboard/myEnrolledClass">
+                    <GrCheckboxSelected /> My Enrolled Classes
+                    <span className="badge  badge-secondary">+{cart?.length || 0}</span>
                   </NavLink>
                 </li>
                 <li>
@@ -116,7 +128,10 @@ const Dashboard = () => {
             <li>
               <NavLink to="/">
                 <FaHome /> Home
-              </NavLink>{' '}
+              </NavLink>
+            </li>
+            <li>
+              <p> <GrContact/> Contact</p>
             </li>
           </ul>
         </div>
