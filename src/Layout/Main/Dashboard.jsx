@@ -66,18 +66,14 @@ const Dashboard = () => {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/dashboard/manageItems">
-                    <FaWallet /> Manage Items
+                  <NavLink to="/dashboard/manageClasses">
+                    <FaWallet /> Manage Classes
                   </NavLink>
                 </li>
-                <li>
-                  <NavLink to="/">
-                    <FaBook /> Manage Bookings (not implemented)
-                  </NavLink>
-                </li>
+              
                 <li>
                   <NavLink to="/dashboard/allUsers">
-                    <FaUsers /> All Users
+                    <FaUsers /> Manage Users
                   </NavLink>
                 </li>
               </>
