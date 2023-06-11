@@ -2,7 +2,6 @@ import { FaUserFriends } from 'react-icons/fa';
 
 const Instructor = ({ item }) => {
   const { image, students, name } = item;
-
   return (
     <div className="card card-compact w-full md:w-96">
       <figure>

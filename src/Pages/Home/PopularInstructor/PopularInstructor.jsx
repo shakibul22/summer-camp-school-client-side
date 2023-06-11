@@ -9,7 +9,7 @@ import { Pagination } from "swiper";
 
 const PopularInstructor = () => {
     const [instructor] = usePopularInstructor();
-    console.log(instructor);
+
     const slicedMenu = instructor.slice(0, 6); // Slice the menu array to show only the first 3 items
 
     return (
