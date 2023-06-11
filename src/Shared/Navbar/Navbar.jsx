@@ -23,9 +23,11 @@ const Navbar = () => {
       <li>
         <NavLink to="/classes">Classes</NavLink>
       </li>
+      
       <li>
         <NavLink to="/dashboard">Dashboard</NavLink>
       </li>
+  
       <>
         {user ? (
           <div className="flex justify-evenly gap-2">
