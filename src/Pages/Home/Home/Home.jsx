@@ -28,7 +28,11 @@ const Home = () => {
     <div className="homepage">
       {isLoading ? (
         <div className="spinner-container flex justify-center align-middle ">
-          <ClipLoader css={spinnerStyle} size={35} color={'#123abc'} loading={isLoading} />
+          <ClipLoader className="loading loading-spinner text-info" css={spinnerStyle} size={35}  loading={isLoading} />
+          <ClipLoader className="loading loading-spinner text-warning" css={spinnerStyle} size={35}  loading={isLoading} />
+          <ClipLoader className="loading loading-spinner text-error" css={spinnerStyle} size={35}  loading={isLoading} />
+        
+
         </div>
       ) : (
         <>
