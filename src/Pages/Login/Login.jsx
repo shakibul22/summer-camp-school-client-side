@@ -37,7 +37,7 @@ const Login = () => {
       const user = result.user;
       console.log(user);
       Swal.fire({
-        position: 'top-end',
+        position: 'center',
         icon: 'success',
         title: 'Login successfully!!',
         showConfirmButton: false,
@@ -52,9 +52,9 @@ const Login = () => {
         .then(result => {
             const googleUsed = result.user;
             Swal.fire({
-                position: 'top-center',
+                position: 'center',
                 icon: 'success',
-                title: 'Google signIn successgully',
+                title: 'Google signIn successfully',
                 showConfirmButton: false,
                 timer: 1500
               })
