@@ -4,6 +4,7 @@ import { AuthContext } from '../../../providers/AuthProvider';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import Swal from 'sweetalert2';
 import { useState } from 'react';
+import { Helmet } from 'react-helmet';
 
 const AddClass = () => {
   const [axiosSecure] = useAxiosSecure();
@@ -55,6 +56,9 @@ const AddClass = () => {
 
   return (
     <div className="bg-[url('https://th.bing.com/th/id/OIP.14kLPSslbG9R8HPepjiVIwHaEK?pid=ImgDet&rs=1')] md:p-24 w-full h-full ">
+       <Helmet>
+        <title>Yoga |Add Class</title>
+      </Helmet>
       <h3 className="text-3xl text-center font-extrabold mb-5 ">Add Class</h3>
       {/* form class row */}
       <form onSubmit={handleSubmit(onSubmit)}>

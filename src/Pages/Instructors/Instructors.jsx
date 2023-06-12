@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import useInstructors from '../../hooks/useInstructors';
 import Instructor from './Instructor';
+import { Helmet } from 'react-helmet';
 
 const Instructors = () => {
     const [instructors] = useInstructors();
@@ -12,6 +13,9 @@ const Instructors = () => {
 
     return (
         <div className="bg-[url('https://th.bing.com/th/id/OIP.UCS30PlxjGZ1e0JJJaYt5wHaEc?w=268&h=180&c=7&r=0&o=5&pid=1.7')]">
+             <Helmet>
+        <title>Yoga |Instructors </title>
+      </Helmet>
             <div className='text-center font-serif text-2xl text-orange-400 p-24'>
                 <h3>Our Respected Instructors</h3>
             </div>

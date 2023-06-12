@@ -6,6 +6,7 @@ import { AuthContext } from '../../providers/AuthProvider';
 import useCart from '../../hooks/useCart';
 import useAdmin from '../../hooks/useAdmin';
 import useInstructor from '../../hooks/useInstructor';
+import { Helmet } from 'react-helmet';
 
 const Dashboard = () => {
   const [cart] = useCart();
@@ -15,6 +16,9 @@ const Dashboard = () => {
 
   return (
     <div className=" bg-[url('https://th.bing.com/th/id/R.fdd608656b482dc0dadde3aaab57c803?rik=c0wX08aqGRH1xQ&pid=ImgRaw&r=0')] ">
+       <Helmet>
+        <title>Yoga |Dashboard </title>
+      </Helmet>
       <div className="navbar w-full ">
         <div className="flex-1">
           <a href="#" className="btn btn-ghost normal-case text-xl">

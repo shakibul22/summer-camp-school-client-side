@@ -4,6 +4,7 @@ import Swal from 'sweetalert2';
 import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import { FaGoogle } from 'react-icons/fa';
+import { Helmet } from 'react-helmet';
 
 const Login = () => {
   const [disabled, setDisabled] = useState(true);
@@ -73,6 +74,9 @@ const Login = () => {
 
   return (
     <div className="hero min-h-screen " style={{ backgroundImage: "url('https://c4.wallpaperflare.com/wallpaper/74/374/372/colorful-minimalism-windows-10-pastel-shapes-hd-wallpaper-preview.jpg')" }}>
+       <Helmet>
+        <title>Yoga | Login</title>
+      </Helmet>
       <div className="hero-content flex-col  md:flex-row lg:flex-row gap-9" >
     
         <div className="card flex-shrink-0 w-1/2 h-[600px] max-w-5xl text-white shadow-xl p ">

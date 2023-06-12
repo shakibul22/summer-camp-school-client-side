@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import useClasses from "../../../hooks/useClasses";
 import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
+import { Helmet } from "react-helmet";
 
 const ManageClasses = () => {
   const [classes, refetch] = useClasses();
@@ -100,6 +101,9 @@ const ManageClasses = () => {
 
   return (
     <div className="w-full ">
+       <Helmet>
+        <title>Yoga | Manage Classes</title>
+      </Helmet>
       <SectionTitle heading="Manage Classes" subHeading="Hurry up" />
       <div className="overflow-x-auto w-full">
         <table className="table w-full">

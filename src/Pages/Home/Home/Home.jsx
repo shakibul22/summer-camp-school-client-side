@@ -5,6 +5,7 @@ import Banner from '../Banner/Banner';
 import PopularInstructor from '../PopularInstructor/PopularInstructor';
 import PopularMenu from '../PopularMenu/PopularMenu';
 import Statistics from '../Statistics/Statistics';
+import { Helmet } from 'react-helmet';
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -26,6 +27,9 @@ const Home = () => {
 
   return (
     <div className="homepage">
+       <Helmet>
+        <title>Yoga |Home </title>
+      </Helmet>
       {isLoading ? (
         <div className="spinner-container flex justify-center align-middle ">
           <ClipLoader className="loading loading-spinner text-info" css={spinnerStyle} size={35}  loading={isLoading} />
