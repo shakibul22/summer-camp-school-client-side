@@ -99,7 +99,7 @@ const ManageClasses = () => {
   };
 
   return (
-    <div className="w-full dark:bg-gray-800">
+    <div className="w-full ">
       <SectionTitle heading="Manage Classes" subHeading="Hurry up" />
       <div className="overflow-x-auto w-full">
         <table className="table w-full">

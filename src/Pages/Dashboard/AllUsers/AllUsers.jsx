@@ -94,37 +94,7 @@ const AllUsers = () => {
     }
   };
 
-  //   const handleDelete = (user) => {
-  //     Swal.fire({
-  //       title: 'Are you sure?',
-  //       text: `You are about to delete ${user.name}. This action cannot be undone.`,
-  //       icon: 'warning',
-  //       showCancelButton: true,
-  //       confirmButtonColor: '#d33',
-  //       cancelButtonColor: '#3085d6',
-  //       confirmButtonText: 'Yes, delete it!'
-  //     }).then((result) => {
-  //       if (result.isConfirmed) {
-  //         fetch(`https://summer-camp-school-server-three.vercel.app/users/${user._id}`, {
-  //           method: 'DELETE'
-  //         })
-  //           .then(res => res.json())
-  //           .then(data => {
-  //             console.log(data);
-  //             if (data.deletedCount) {
-  //               refetch();
-  //               Swal.fire({
-  //                 position: 'top-end',
-  //                 icon: 'success',
-  //                 title: `${user.name} has been deleted!`,
-  //                 showConfirmButton: false,
-  //                 timer: 1500
-  //               });
-  //             }
-  //           });
-  //       }
-  //     });
-  //   };
+
 
   return (
     <div className="w-full p-3">
