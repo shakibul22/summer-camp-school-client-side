@@ -1,7 +1,10 @@
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { FaUserFriends } from 'react-icons/fa';
-
 const Instructor = ({ item }) => {
   const { image, students, name } = item;
+  
   return (
     <div className="card card-compact w-full md:w-96 bg-[url('https://th.bing.com/th/id/R.50490de7ae72957eb831a3ee44b90920?rik=9G%2fMthZ%2bpkb%2fPQ&pid=ImgRaw&r=0')]">
       <figure>
