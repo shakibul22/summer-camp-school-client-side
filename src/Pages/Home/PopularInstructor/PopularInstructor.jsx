@@ -23,7 +23,7 @@ const PopularInstructor = () => {
           clickable: true,
         }}
         modules={[Pagination]}
-        className="mySwiper"
+        className="mySwiper "
       >
                 <div className="flex flex-row">
                     {slicedMenu.map((item) => (
