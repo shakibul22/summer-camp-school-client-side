@@ -1,0 +1,16 @@
+.homepage {
+    color: var(--text-color);
+    background-color: var(--background-color);
+  }
+  
+  [data-theme='dark'] {
+    --text-color: #fff;
+    --background-color: #151d29;
+  }
+  
+  [data-theme='light'] {
+    --text-color: #000;
+    --background-color: #d6e7f7;
+  }
+  
+  

@@ -11,6 +11,16 @@ const Navbar = () => {
       .then(() => {})
       .catch((error) => console.log(error));
   };
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const handleToggle = () => {
+    setIsDarkMode((prevMode) => !prevMode);
+    if (isDarkMode) {
+      document.documentElement.setAttribute('data-theme', 'light');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  };
 
   const navOptions = (
     <>
@@ -27,7 +37,12 @@ const Navbar = () => {
       <li>
         <NavLink to="/dashboard">Dashboard</NavLink>
       </li>
-  
+    
+      <li>
+          <button onClick={handleToggle}>
+            {isDarkMode ? 'Light Mode' : 'Dark Mode'}
+          </button>
+        </li>
       <>
         {user ? (
           <div className="flex justify-evenly gap-2">

@@ -5,10 +5,11 @@ import PopularMenu from "../PopularMenu/PopularMenu";
 import Statistics from "../Statistics/Statistics";
 
 
+
 const Home = () => {
     return (
-        <div> 
-          
+        <div  className="homepage"> 
+      
           <Banner/> 
           <PopularMenu/>
        
