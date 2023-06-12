@@ -9,10 +9,10 @@ import Swal from "sweetalert2";
 const Register = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const { createUser, updateUserProfile, googleUser } = useContext(AuthContext);
-    const location=useLocation();
-    const navigate=useNavigate()
-   
-  const from=location.state?.from?.pathname || '/';
+    const location = useLocation();
+    const navigate = useNavigate()
+
+    const from = location.state?.from?.pathname || '/';
 
     const onSubmit = data => {
 
@@ -23,7 +23,7 @@ const Register = () => {
                 updateUserProfile(data.name, data.photoURL)
                     .then(() => {
                         const saveUser = { name: data.name, email: data.email }
-                        fetch('http://localhost:5000/users', {
+                        fetch('https://summer-camp-school-server-three.vercel.app/users', {
                             method: 'POST',
                             headers: {
                                 'content-type': 'application/json'
@@ -42,7 +42,7 @@ const Register = () => {
                                         timer: 1500
                                     });
                                     navigate(from, { replace: true });
-                                   
+
                                 }
                             })
 
@@ -60,16 +60,16 @@ const Register = () => {
                     title: 'Google sign up successgully',
                     showConfirmButton: false,
                     timer: 1500
-                  })
-                  navigate(from, { replace: true });
+                })
+                navigate(from, { replace: true });
             })
             .catch(error => {
                 Swal.fire({
                     icon: 'error',
                     title: 'Oops...',
                     text: 'Something went wrong!',
-                   
-                  })
+
+                })
             });
     };
 

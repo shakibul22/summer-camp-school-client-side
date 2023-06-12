@@ -15,7 +15,7 @@ const Dashboard = () => {
 
   return (
     <div className=" bg-[url('https://th.bing.com/th/id/R.fdd608656b482dc0dadde3aaab57c803?rik=c0wX08aqGRH1xQ&pid=ImgRaw&r=0')] ">
-      <div className="navbar">
+      <div className="navbar w-full ">
         <div className="flex-1">
           <a href="#" className="btn btn-ghost normal-case text-xl">
             {' '}
@@ -24,12 +24,12 @@ const Dashboard = () => {
               src="https://th.bing.com/th/id/R.87f8ade857386bf2dd7043e402a3566a?rik=pdRwS%2bh5W%2byz%2fw&riu=http%3a%2f%2fwww.compassioninaction.info%2fwp-content%2fuploads%2f2015%2f10%2fyoga-logo.png&ehk=TXQKlT6ypQcLS7%2bjSFfd4zFZHO7cLIxqPchTGaovjms%3d&risl=&pid=ImgRaw&r=0"
               alt="YOGA"
             />
-            <h1>YOGA LEARNING SCHOOL</h1>
+             <h1 className="hidden sm:block">YOGA LEARNING SCHOOL</h1>
           </a>
         </div>
         <div className="flex-none gap-2">
           <div className="form-control">
-            <input type="text" placeholder="Search" className="input input-bordered w-24 md:w-auto" />
+            <input type="text" placeholder="Search" className="input input-bordered w-50  md:w-auto" />
           </div>
           <div className="dropdown dropdown-end">
             <label className="btn btn-ghost btn-circle avatar">
@@ -55,7 +55,7 @@ const Dashboard = () => {
         </div>
         <div className="drawer-side">
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-          <ul className="menu p-4 w-80 h-full shadow-2xl text-cyan-700">
+          <ul className="menu p-4 w-80 h-full shadow-2xl md:text-cyan-700 ">
             {isAdmin && (
               <>
             <h3 className="text-2xl font-bold">Admin Dashboard</h3>

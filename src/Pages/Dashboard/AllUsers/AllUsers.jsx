@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { Helmet } from "react-helmet-async";
 import { FaTrashAlt, FaUserShield } from "react-icons/fa";
-import {GiTeacher } from "react-icons/gi";
+
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { useState } from "react";
@@ -12,60 +12,60 @@ const AllUsers = () => {
     const res = await axiosSecure.get('/users');
     return res.data;
   });
-const [adminDisabled,setAdminDisabled]=useState(false);
-const [instructorDisabled,setInstructorDisabled]=useState(false);
+  const [adminDisabled, setAdminDisabled] = useState(false);
+  const [instructorDisabled, setInstructorDisabled] = useState(false);
   const handleMakeAdmin = (user) => {
-    fetch(`http://localhost:5000/users/admin/${user._id}`, {
+    fetch(`https://summer-camp-school-server-three.vercel.app/users/admin/${user._id}`, {
       method: 'PATCH'
     })
       .then(res => res.json())
       .then(data => {
         Swal.fire({
-            title: 'Are you sure?',
-            text: "You want to amke admin",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, i made'
-          }).then((result) => {
-           if(result.isConfirmed){
-            if(data.modifiedCount){
-                refetch();
-                setAdminDisabled(true);
-                setInstructorDisabled(false);
-                Swal.fire({
-                    position: 'center',
-                    icon: 'success',
-                    title: `${user.name} is an Admin Now!`,
-                    showConfirmButton: false,
-                    timer: 1500
-                  });
+          title: 'Are you sure?',
+          text: "You want to amke admin",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Yes, i made'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            if (data.modifiedCount) {
+              refetch();
+              setAdminDisabled(true);
+              setInstructorDisabled(false);
+              Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: `${user.name} is an Admin Now!`,
+                showConfirmButton: false,
+                timer: 1500
+              });
             }
-           }
-          })
-       
+          }
+        })
+
       });
   };
- 
+
   const handleMakeInstructor = (user) => {
 
-   if(user.email==="shakibulislam684@gmail.com"){
-    Swal.fire({
+    if (user.email === "shakibulislam684@gmail.com") {
+      Swal.fire({
         position: 'center',
         icon: 'error',
         title: 'Permission Denied',
-        text:'This user can not be an instructor.',
+        text: 'This user can not be an instructor.',
         showConfirmButton: false,
         timer: 1500
       });
-   }else{
-    fetch(`http://localhost:5000/users/instructor/${user._id}`, {
+    } else {
+      fetch(`https://summer-camp-school-server-three.vercel.app/users/instructor/${user._id}`, {
         method: 'PATCH'
       })
-      .then(res => res.json())
-      .then(data => {
-        Swal.fire({
+        .then(res => res.json())
+        .then(data => {
+          Swal.fire({
             title: 'Are you sure?',
             text: "You want to make instructor",
             icon: 'warning',
@@ -74,57 +74,57 @@ const [instructorDisabled,setInstructorDisabled]=useState(false);
             cancelButtonColor: '#d33',
             confirmButtonText: 'Yes, i made'
           }).then((result) => {
-           if(result.isConfirmed){
-            if(data.modifiedCount){
+            if (result.isConfirmed) {
+              if (data.modifiedCount) {
                 refetch();
                 setAdminDisabled(false);
                 setInstructorDisabled(true);
                 Swal.fire({
-                    position: 'center',
-                    icon: 'success',
-                    title: `${user.name} is an Admin Now!`,
-                    showConfirmButton: false,
-                    timer: 1500
-                  });
+                  position: 'center',
+                  icon: 'success',
+                  title: `${user.name} is an Admin Now!`,
+                  showConfirmButton: false,
+                  timer: 1500
+                });
+              }
             }
-           }
           })
-       
-      });
-   }
+
+        });
+    }
   };
 
-//   const handleDelete = (user) => {
-//     Swal.fire({
-//       title: 'Are you sure?',
-//       text: `You are about to delete ${user.name}. This action cannot be undone.`,
-//       icon: 'warning',
-//       showCancelButton: true,
-//       confirmButtonColor: '#d33',
-//       cancelButtonColor: '#3085d6',
-//       confirmButtonText: 'Yes, delete it!'
-//     }).then((result) => {
-//       if (result.isConfirmed) {
-//         fetch(`http://localhost:5000/users/${user._id}`, {
-//           method: 'DELETE'
-//         })
-//           .then(res => res.json())
-//           .then(data => {
-//             console.log(data);
-//             if (data.deletedCount) {
-//               refetch();
-//               Swal.fire({
-//                 position: 'top-end',
-//                 icon: 'success',
-//                 title: `${user.name} has been deleted!`,
-//                 showConfirmButton: false,
-//                 timer: 1500
-//               });
-//             }
-//           });
-//       }
-//     });
-//   };
+  //   const handleDelete = (user) => {
+  //     Swal.fire({
+  //       title: 'Are you sure?',
+  //       text: `You are about to delete ${user.name}. This action cannot be undone.`,
+  //       icon: 'warning',
+  //       showCancelButton: true,
+  //       confirmButtonColor: '#d33',
+  //       cancelButtonColor: '#3085d6',
+  //       confirmButtonText: 'Yes, delete it!'
+  //     }).then((result) => {
+  //       if (result.isConfirmed) {
+  //         fetch(`https://summer-camp-school-server-three.vercel.app/users/${user._id}`, {
+  //           method: 'DELETE'
+  //         })
+  //           .then(res => res.json())
+  //           .then(data => {
+  //             console.log(data);
+  //             if (data.deletedCount) {
+  //               refetch();
+  //               Swal.fire({
+  //                 position: 'top-end',
+  //                 icon: 'success',
+  //                 title: `${user.name} has been deleted!`,
+  //                 showConfirmButton: false,
+  //                 timer: 1500
+  //               });
+  //             }
+  //           });
+  //       }
+  //     });
+  //   };
 
   return (
     <div className="w-full p-3">
@@ -151,12 +151,12 @@ const [instructorDisabled,setInstructorDisabled]=useState(false);
                 <td>{user.name}</td>
                 <td>{user.email}</td>
                 <td>
-                  {user.role==='admin'?'admin':<button onClick={()=>handleMakeAdmin(user)} className="btn btn-outline" disabled={adminDisabled}><FaUserShield/> </button>}
+                  {user.role === 'admin' ? 'admin' : <button onClick={() => handleMakeAdmin(user)} className="btn btn-outline" disabled={adminDisabled}><FaUserShield /> </button>}
                 </td>
                 <td>
-                    {
-                        user.role==='instructor'?'instructor':<button onClick={()=>handleMakeInstructor(user)} className="btn btn-outline" disabled={instructorDisabled}> Make Instructor</button>
-                    }
+                  {
+                    user.role === 'instructor' ? 'instructor' : <button onClick={() => handleMakeInstructor(user)} className="btn btn-outline" disabled={instructorDisabled}> Make Instructor</button>
+                  }
                 </td>
               </tr>
             ))}

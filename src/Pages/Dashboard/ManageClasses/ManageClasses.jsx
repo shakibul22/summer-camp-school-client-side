@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { FaTrashAlt } from "react-icons/fa";
-import SectionTitle from "../../../components/SectionTitle/SectionTitle";
+
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import useClasses from "../../../hooks/useClasses";
+import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
 
 const ManageClasses = () => {
   const [classes, refetch] = useClasses();

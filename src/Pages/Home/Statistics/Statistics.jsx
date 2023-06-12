@@ -3,7 +3,7 @@
 const Statistics = () => {
     return (
         <div>
-            <div className="w-full p-4 mt-[100px] mb-4 text-center bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+            <div className="w-full p-4 mt-[100px] bg-[url('https://th.bing.com/th/id/R.50490de7ae72957eb831a3ee44b90920?rik=9G%2fMthZ%2bpkb%2fPQ&pid=ImgRaw&r=0')] mb-4 text-center bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
                 <h1 className="text-center font-serif text-2xl"> Statistics</h1>
                 <div className=" p-1  rounded-lg md:p-8 " id="stats" role="tabpanel" aria-labelledby="stats-tab">
                     <div className="grid max-w-screen-xl grid-cols-2 gap-8 p-4 mx-auto text-white sm:grid-cols-3 xl:grid-cols-6 sm:p-8">

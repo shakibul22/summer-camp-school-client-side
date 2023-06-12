@@ -1,4 +1,4 @@
-import  { useContext } from 'react';
+import { useContext } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
@@ -6,19 +6,20 @@ import { AuthContext } from '../../providers/AuthProvider';
 import useCart from '../../hooks/useCart';
 
 const ClassItem = ({ item }) => {
-    
+
   const { user } = useContext(AuthContext);
   const [, refetch] = useCart();
   const navigate = useNavigate();
   const location = useLocation();
-  const { name, image, instructor, availableSeats, price,_id } = item;
+  const { name, image, instructor, availableSeats, price, _id } = item;
 
   const handleAddToCart = (item) => {
-    
+
     if (user && user.email) {
       const cartItem = {
-        menuItemId: _id, name, image, price,  email: user.email, };
-      fetch('http://localhost:5000/carts', {
+        menuItemId: _id, name, image, price, email: user.email,
+      };
+      fetch('https://summer-camp-school-server-three.vercel.app/carts', {
         method: 'POST',
         headers: {
           'content-type': 'application/json',
