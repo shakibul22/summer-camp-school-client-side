@@ -2,40 +2,41 @@ import React from 'react';
 import usePopularInstructor from '../../../hooks/usePopularInstructor';
 import SectionTitle from '../../../Components/SectionTitle/SectionTitle';
 import Instructor from './Instructor';
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import { Pagination } from "swiper";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/swiper-bundle.css';
+import { Pagination } from 'swiper';
 
 const PopularInstructor = () => {
-    const [instructor] = usePopularInstructor();
+  const [instructors] = usePopularInstructor();
 
-    const slicedMenu = instructor.slice(0, 6); // Slice the menu array to show only the first 3 items
+  // Slice the array to show only the first 6 items
+  const slicedInstructors = instructors.slice(0, 6);
 
-    return (
-        <>
-            <SectionTitle heading='CONNECT AND GROW WITH TOP YOGA TEACHERS' subHeading='Practice with some of the best yoga teachers in the world, across a variety of styles.' />
-           
+  return (
+    <div className='max-w-7xl mx-auto'>
+      <SectionTitle
+        heading="CONNECT AND GROW WITH TOP YOGA TEACHERS"
+        subHeading="Practice with some of the best yoga teachers "
+      />
+
       <Swiper
         slidesPerView={3}
-        spaceBetween={30}
+        spaceBetween={5}
         pagination={{
           clickable: true,
         }}
         modules={[Pagination]}
-        className="mySwiper "
+        autoplay={{ delay: 2000, disableOnInteraction: false }} // Add autoplay settings
+        className="mySwiper"
       >
-                <div className="flex flex-row">
-                    {slicedMenu.map((item) => (
-                        <SwiperSlide key={item._id}>
-                            <Instructor item={item} />
-                        </SwiperSlide>
-                    ))}
-                </div>
-            </Swiper>
-        </>
-    );
+        {slicedInstructors.map((item) => (
+          <SwiperSlide key={item._id}>
+            <Instructor item={item} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
+  );
 };
 
 export default PopularInstructor;
-

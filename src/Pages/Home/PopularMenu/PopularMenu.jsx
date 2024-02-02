@@ -13,11 +13,11 @@ const PopularMenu = () => {
   const slicedMenu = menu.slice(0, 6); // Slice the menu array to show only the first 3 items
 
   return (
-    <div className="bg-[url('https://th.bing.com/th/id/OIP.CHyYu0A7HbTqinAovj3SdQAAAA?pid=ImgDet&rs=1')]">
+    <div >
       <SectionTitle heading="Our Popular Classes" subHeading="What we do" />
       <Swiper
-        slidesPerView={3}
-        spaceBetween={30}
+        slidesPerView={4}
+        spaceBetween={3}
         centeredSlides={true}
         pagination={{
           clickable: true,

@@ -1,6 +1,3 @@
-import { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 import { FaUserFriends } from 'react-icons/fa';
 const Instructor = ({ item }) => {
   const { image, students, name } = item;

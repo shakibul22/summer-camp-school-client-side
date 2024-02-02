@@ -73,7 +73,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar fixed max-w-screen-xl z-30 bg-opacity-50 text-white bg-black">
+    <div className="navbar fixed max-w-screen z-30 bg-opacity-50 text-white bg-black px-2 lg:px-[120px]">
       <div className="navbar-start">
         <div className="dropdown">
           <label

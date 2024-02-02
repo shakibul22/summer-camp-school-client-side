@@ -1,8 +1,8 @@
 import { FaFacebook, FaInstagram, FaPhoneAlt, FaPinterest, FaTwitter, FaWhatsapp, FaYoutube } from 'react-icons/fa';
 const Footer = () => {
     return (
-        <footer  className="">
-            <div className="footer p-10  bg-slate-800 text-white ">
+        <footer  className=" ">
+            <div className="footer p-4 lg:p-32  bg-cyan-800 bg-[url('https://res.cloudinary.com/drhtv8dr4/image/upload/v1701940099/topography.ed6636e4_gsbeg2.svg')] text-white ">
             <div>
     <img className='w-10 h-10 rounded-md' src="https://th.bing.com/th/id/OIP.32ViKWKLo8sSJkeqrLqZywHaKe?pid=ImgDet&w=636&h=900&rs=1" alt="yoga" />
     <p>YOGA Industries Ltd.<br/>Providing reliable tech since 1992</p>
@@ -57,10 +57,10 @@ const Footer = () => {
    
   </div>
             </div>
-  
-  <div className="footer footer-center p-4 bg-base-300 text-base-content">
+  <div className="footer footer-center p-4 bg-[#2a2a2a] text-white">
     <p>Copyright © 2023 - All right reserved by ACME Industries Ltd</p>
   </div>
+  
 
 </footer>
     );

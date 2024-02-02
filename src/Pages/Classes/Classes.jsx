@@ -5,14 +5,14 @@ import { Helmet } from 'react-helmet';
 const Classes = () => {
     const [classes]=useClasses();
     return (
-        <div className="bg-[url('https://th.bing.com/th/id/OIP.UCS30PlxjGZ1e0JJJaYt5wHaEc?w=268&h=180&c=7&r=0&o=5&pid=1.7')]">
+        <div className="bg-[url('https://th.bing.com/th/id/OIP.UCS30PlxjGZ1e0JJJaYt5wHaEc?w=268&h=180&c=7&r=0&o=5&pid=1.7')] mb-6 py-24">
            <Helmet>
         <title>Yoga |Classes</title>
       </Helmet>
-        <div className='text-center font-serif text-2xl text-orange-400 py-24'>
+        <div className='text-center font-serif text-2xl text-orange-400 mb-7'>
             <h3>Our Classes</h3>
         </div>
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-4 px-5'>
+        <div className='grid grid-cols-1 md:grid-cols-3 gap-4 px-5 w-full lg:max-w-7xl mx-auto'>
           {
             classes.map(item=><ClassItem key={item._id} item={item} ></ClassItem> )
           }  

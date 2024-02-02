@@ -12,7 +12,7 @@ const Instructors = () => {
     };
 
     return (
-        <div className="bg-[url('https://th.bing.com/th/id/OIP.UCS30PlxjGZ1e0JJJaYt5wHaEc?w=268&h=180&c=7&r=0&o=5&pid=1.7')]">
+        <div className="bg-[url('https://th.bing.com/th/id/OIP.UCS30PlxjGZ1e0JJJaYt5wHaEc?w=268&h=180&c=7&r=0&o=5&pid=1.7')]  mb-3 lg:mb-12">
              <Helmet>
         <title>Yoga |Instructors </title>
       </Helmet>
@@ -20,7 +20,7 @@ const Instructors = () => {
                 <h3>Our Respected Instructors</h3>
             </div>
 
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-4 px-5'>
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-4 px-5  w-full lg:max-w-7xl mx-auto'>
                 {showAll
                     ? instructors.map((teacher) => (
                         <Instructor key={teacher._id} teacher={teacher} />
